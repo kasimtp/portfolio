@@ -1,99 +1,146 @@
+import { motion } from "framer-motion";
+import MernStack from "../assets/mernstack.png";
+import Html from "../assets/Html.png";
+import Css from "../assets/CSS.png";
+import Javascript from "../assets/JS.png";
+import ReactLogo from "../assets/React.png";
+import ReduxLogo from "../assets/Redux.png";
+import Tailwind from "../assets/Tailwind Css.png";
+import Bootstrap from "../assets/Bootstrap.png";
+import NodeLogo from "../assets/NodeLogo.png";
+import Mongodb from "../assets/mongodb.svg";
+import Express from "../assets/Express.png";
+import NextJs from "../assets/NextJs.png";
 
-import MernStack from '../assets/mernstack.png'
-import Html from '../assets/Html.png'
-import Css from '../assets/CSS.png'
-import Javascript from '../assets/JS.png'
-import ReactLogo from '../assets/React.png'
-import ReduxLogo from '../assets/Redux.png'
-import Tailwind from '../assets/Tailwind Css.png'
-import Bootstrap from '../assets/Bootstrap.png'
-import NodeLogo from '../assets/NodeLogo.png'
-import Mongodb from '../assets/mongodb.svg'
-import Express from '../assets/Express.png'
-import NextJs from '../assets/NextJs.png'
+const skills = [
+  { img: Html, label: "HTML" },
+  { img: Css, label: "CSS" },
+  { img: Javascript, label: "JavaScript" },
+  { img: ReactLogo, label: "React" },
+  { img: ReduxLogo, label: "Redux" },
+  { img: Tailwind, label: "Tailwind CSS" },
+  { img: Bootstrap, label: "Bootstrap" },
+  { img: NodeLogo, label: "Node.js" },
+  { img: Mongodb, label: "MongoDB" },
+  { img: Express, label: "Express.js" },
+  { img: NextJs, label: "Next.js" },
+];
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const About = () => {
-    return (
-        <div className='relative' id='about'>
-            <div className='bg-gray-100 py-12'>
-                <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-                    <div className='text-center'>
-                        <h2 className='text-base text-red-600 font-semibold tracking-wide uppercase'>About Me</h2>
-                        <p className='mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl'>Hi, I&lsquo;m Kasim</p>
-                        <p className='mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto'>
-                            A Full-Stack Developer with expertise in web development, WordPress, SEO, and the MERN stack.
-                        </p>
-                    </div>
-                    <div className='mt-10'>
-                        <div className='grid grid-cols-1 gap-12 lg:grid-cols-2'>
-                            <div>
-                                <h3 className='text-2xl font-semibold text-gray-900'>My Journey</h3>
-                                <p className='mt-4 text-lg text-gray-600'>
-                                    I started my journey in web development with a passion for creating intuitive and scalable applications. With proficiency in the MERN stack (MongoDB, Express.js, React, and Node.js), I have built Projects such as a full-stack food ordering website , ajob portal, and even a LinkedIn clone. My projects demonstrate my ability to integrate poweful backend solutions with sleek, user-friendly frontend designs.
-                                </p>
-                                {/* <img src={MernStack} alt="" className='p-2 rounded-lg w-52 mt-4' /> */}
-                            </div>
-                            <div className='border border-red-200 rounded-lg md:p-7 py-7  flex flex-col gap-8  items-center shadow-lg shadow-green-300'>
-                                <h3 className='text-2xl font-semibold text-red-600'>Skills & Expertise</h3>
-                                <div className='flex items-center justify-center flex-wrap gap-3'>
-                                    <div className='border border-red-300 flex items-center gap-1 w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={Html} alt="" className='w-10' />
-                                        <span className='font-semibold'>HTML</span>
-                                    </div>
-                                    <div className='border border-red-300 flex items-center gap-1 w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={Css} alt="" className='w-8' />
-                                        <span className='font-semibold'>CSS</span>
-                                    </div>
-                                    <div className='border border-red-300 flex items-center gap-1 w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={Javascript} alt="" className='w-10' />
-                                        <span className='font-semibold'>Javascript</span>
-                                    </div>
-                                    <div className='border border-red-300 flex items-center gap-1 w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={ReactLogo} alt="" className='w-8 rounded-full' />
-                                        <span className='font-semibold'>React</span>
-                                    </div>
-                                    <div className='border border-red-300 flex items-center gap-1 w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={ReduxLogo} alt="" className='w-8' />
-                                        <span className='font-semibold'>Redux</span>
-                                    </div>
-                                    <div className='border border-red-300 flex items-center gap-1 w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={Tailwind} alt="" className='w-8 rounded-full' />
-                                        <span className='font-semibold'>Tailwind Css</span>
-                                    </div>
-                                    <div className='border border-red-300 flex items-center gap-1 w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={Bootstrap} alt="" className='w-10' />
-                                        <span className='font-semibold'>Bootstrap</span>
-                                    </div>
-                                    <div className='border border-red-300 flex items-center gap-1 w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={NodeLogo} alt="" className='w-10' />
-                                        <span className='font-semibold'>Node Js</span>
-                                    </div>
-                                    <div className='border border-red-300 flex items-center  w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={Mongodb} alt="" className='w-10' />
-                                        <span className='font-semibold'>Mongodb</span>
-                                    </div>
-                                    <div className='border border-red-300 flex items-center gap-1 w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={Express} alt="" className='w-10' />
-                                        <span className='font-semibold'>Express Js</span>
-                                    </div>
-                                    <div className='border border-red-300 flex items-center gap-1 w-max px-2 py-1 rounded-lg shadow-md shadow-red-300'>
-                                        <img src={NextJs} alt="" className='w-9' />
-                                        <span className='font-semibold'>Next Js</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='mt-12'>
-                        <h3 className='text-2xl font-semibold text-gray-900'>More About Me</h3>
-                        <p className='mt-4 text-lg text-gray-600'>
-                            Apart from coding, I am passionate about learning new technologies and keeping myself up-to-date with the latest trends in web development. I also run a YouTube channel where I teach Javascript, MERN Stack development, Wordpress and digital Marketing, helping others dive deep into the world of programming and technology.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+  return (
+    <section
+      id="about"
+      className="text-white font-sans py-16 px-4 sm:px-6 lg:px-8"
+      style={{
+        background: "linear-gradient(to right, #0e1628, #1a2233, #0e1628)",
+      }}
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          variants={fadeInUp}
+        >
+          <h2 className="text-sm text-cyan-400 font-semibold uppercase tracking-widest">
+            About Me
+          </h2>
+          <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-white">
+            Hi, I’m Kasim
+          </h1>
+          <p className="mt-4 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+            A Full-Stack Developer skilled in MERN Stack, SEO, and WordPress —
+            passionate about clean code and user-centric design.
+          </p>
+        </motion.div>
 
-export default About
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* My Journey */}
+          <motion.div
+            className="bg-[#1f2a3a] p-6 sm:p-8 rounded-2xl shadow-lg"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            variants={fadeInUp}
+          >
+            <h3 className="text-2xl font-semibold text-cyan-400 mb-4">
+              My Journey
+            </h3>
+            <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
+              I started coding to build practical, problem-solving applications.
+              My MERN stack experience includes real-world projects like job
+              boards, food apps, and LinkedIn clones, combining scalable backend
+              APIs with modern front-end UI.
+            </p>
+          </motion.div>
+
+          {/* Skills */}
+          <motion.div
+            className="bg-[#1f2a3a] p-6 sm:p-8 rounded-2xl shadow-lg"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            variants={fadeInUp}
+          >
+            <h3 className="text-2xl font-semibold text-cyan-400 text-center mb-6">
+              Skills & Tools
+            </h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {skills.map(({ img, label }, i) => (
+                <motion.div
+                  key={i}
+                  className="flex items-center gap-2 px-3 py-2 border border-gray-600 rounded-lg bg-[#2a3548] w-full sm:w-auto hover:shadow-cyan-500/20 hover:shadow transition duration-300"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                >
+                  <img
+                    src={img}
+                    alt={label}
+                    className="w-8 h-8 object-contain"
+                  />
+                  <span className="text-sm font-medium text-gray-200">
+                    {label}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* More About Me */}
+        <motion.div
+          className="mt-16 bg-[#1f2a3a] p-6 sm:p-8 rounded-2xl shadow-lg"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          variants={fadeInUp}
+        >
+          <h3 className="text-2xl font-semibold text-cyan-400 mb-4">
+            More About Me
+          </h3>
+          <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
+            Beyond coding, I love exploring new tools and teaching others. I run
+            a YouTube channel where I create content on JavaScript, MERN Stack,
+            WordPress, and digital marketing — helping others grow and innovate.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default About;

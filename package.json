@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.0.0",
     "@tsparticles/react": "^3.0.0",
     "can-autoplay": "^3.0.2",
+    "framer-motion": "^12.18.1",
     "inspirational-quotes": "^2.0.1",
     "lottie-react": "^2.4.1",
     "lottie-web": "^5.12.2",

@@ -1,44 +1,71 @@
-
-// import hero from '../assets/Hero.png'
-// import facebook from '../assets/facebook.png'
-// import twitter from '../assets/twitter.png'
-// import instagram from '../assets/instagram.png'
-// import linkedin from '../assets/linkedin.png'
-import reactLogo from '../assets/React.png'
-import reduxLogo from '../assets/Redux.png'
-import tailwind from '../assets/Tailwind Css.png'
-// import Laptop from '../assets/Laptop.png'
-import qrcode from '../assets/qr.png'
-
-
+import reactLogo from "../assets/React.png";
+import reduxLogo from "../assets/Redux.png";
+import tailwind from "../assets/Tailwind Css.png";
+import githubqr from "../assets/githubqr.png";
 
 const Hero = () => {
   return (
-    <section className='relative '>
-      <div className='max-w-7xl mx-auto'>
-        <div className='flex flex-col md:flex-row items-center lg:h-[90vh] justify-between' >
-            <div className='md:w-1/2 mb-8   md:mb-0 flex flex-col space-y-4 px-6 lg:px-0 lg:-mt-55 mt-10'>
-               <h1 className='lg:text-7xl text-4xl font-bold lg:leading-snug text-[#535568]'>   <br />I&#39;m  <span className='text-gray-600 '>Kasim</span></h1>
-               <p className='md:text-2xl text-xl mb-4'>Web Developer & Designer</p>
-                <p className='mb-4 text-gray-900'>I&lsquo;m a passionate web developer with expertise in React, Next.js, and modern web technologies. I love creating beautiful and functional website that solve real world problems.</p>
-               <button className='bg-black text-white px-3 py-2 w-max rounded-md'><a href="https://drive.google.com/file/d/1LBMHWpTgTGkvCTcHYiU8JQRCHb5-SRl8/view?usp=sharing" download target='_blank'>Download CV</a></button>
-            </div>
-            <div className='md:w-1/2  relative flex justify-center items-end '>
-                 <img src={qrcode} alt="" className='lg:h-[70vh] lg:mr-16 h-96' />
-                 <img src={reactLogo} alt="" className='absolute w-10 top-36 left-0 rounded-full md:hidden'/>
-                 <img src={reduxLogo} alt="" className='absolute w-10 top-0 right-5 md:hidden'/>
-                 <img src={tailwind} alt="" className='absolute w-10 rounded-full right-0 bottom-36 md:hidden'/>
-            </div>
+    <section
+      className="text-white border-b border-gray-900 lg:h-[900px] font-sans"
+      style={{
+        background: "linear-gradient(to right, #0e1628, #1a2233, #0e1628)",
+      }}
+    >
+      <div className="max-w-screen-xl  mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <div className="flex flex-col-reverse   lg:mt-28 lg:flex-row items-center justify-between gap-10">
+          {/* Left Side */}
+          <div className="w-full   lg:w-1/2 lg:space-y-10 space-y-6 lg:pb-18 text-center lg:text-left px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+              Hi, I&apos;m <span className="text-cyan-400">Kasim</span>
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 font-medium">
+              Mern Stack Developer & Designer
+            </p>
+
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed">
+              I’m a passionate web developer with expertise in React, Next.js,
+              and modern web technologies. I love building beautiful, performant
+              websites that solve real-world problems.
+            </p>
+
+            <a
+              href="https://drive.google.com/file/d/1_eHK8PQ0rWRtJXlzG2-HZA6n1ysgaW-w/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-cyan-500 text-white px-6 py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-white hover:text-cyan-600 transition duration-300"
+            >
+              Download CV
+            </a>
+          </div>
+
+          {/* Right Side */}
+          <div className="w-full lg:w-1/2 relative flex justify-center items-center">
+            <img
+              src={githubqr}
+              alt="QR Code"
+              className="h-64 sm:h-72 md:h-80 lg:h-[45vh] rounded-2xl shadow-[0_0_60px_10px_rgba(6,182,212,0.4)]"
+            />
+            {/* <img
+              src={reactLogo}
+              alt="React"
+              className="absolute w-10  lg:block hidden sm:w-12 md:w-14 top-4 left-4 rounded-full"
+            />
+            <img
+              src={reduxLogo}
+              alt="Redux"
+              className="absolute w-10 lg:block hidden sm:w-12 md:w-14 top-0 right-5"
+            />
+            <img
+              src={tailwind}
+              alt="Tailwind"
+              className="absolute w-10 sm:w-12 lg:block hidden md:w-14 bottom-6 right-4 rounded-full"
+            /> */}
+          </div>
         </div>
       </div>
-      {/* <div className='absolute top-40 right-10 hidden bg-gray-50 p-4 md:flex flex-col gap-6 rounded-full h-[260px] w-[70px]'> 
-        <img src={facebook} alt="" className='w-20  '/>
-        <img src={instagram} alt="" className='w-20'/>
-        <img src={twitter} alt="" className='w-20'/>
-        <img src={linkedin} alt="" className='w-20'/>
-      </div> */}
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
