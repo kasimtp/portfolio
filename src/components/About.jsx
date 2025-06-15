@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import MernStack from "../assets/mernstack.png";
 import Html from "../assets/Html.png";
 import Css from "../assets/CSS.png";
 import Javascript from "../assets/JS.png";
@@ -57,8 +56,9 @@ const About = () => {
             Hi, I’m Kasim
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-            A Full-Stack Developer skilled in MERN Stack, SEO, and WordPress —
-            passionate about clean code and user-centric design.
+            A Full-Stack Developer skilled in MERN Stack, Firebase, and REST
+            APIs — passionate about clean code, real-world projects, and
+            responsive, user-friendly design.
           </p>
         </motion.div>
 
@@ -77,10 +77,17 @@ const About = () => {
               My Journey
             </h3>
             <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-              I started coding to build practical, problem-solving applications.
-              My MERN stack experience includes real-world projects like job
-              boards, food apps, and LinkedIn clones, combining scalable backend
-              APIs with modern front-end UI.
+              I began my development journey with a strong curiosity to
+              understand how web applications work behind the scenes. Over time,
+              I built a solid foundation in the MERN stack, focusing on
+              full-stack development with technologies like MongoDB, Express.js,
+              React.js, and Node.js. Throughout my learning and internship
+              experience, I created real-world projects such as e-commerce
+              platforms, portfolio builders, hospital online booking systems,
+              and To-do list applications, integrating authentication, RESTful
+              APIs, and modern UI design using Tailwind CSS and responsive
+              frameworks. My passion lies in writing clean, scalable code and
+              turning ideas into functional, user-friendly applications.
             </p>
           </motion.div>
 
@@ -93,10 +100,10 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             variants={fadeInUp}
           >
-            <h3 className="text-2xl font-semibold text-cyan-400 text-center mb-6">
+            <h3 className="text-2xl font-semibold  text-cyan-400 text-center mb-6">
               Skills & Tools
             </h3>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-[27px]">
               {skills.map(({ img, label }, i) => (
                 <motion.div
                   key={i}
@@ -133,9 +140,10 @@ const About = () => {
             More About Me
           </h3>
           <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-            Beyond coding, I love exploring new tools and teaching others. I run
-            a YouTube channel where I create content on JavaScript, MERN Stack,
-            WordPress, and digital marketing — helping others grow and innovate.
+            Outside of coding, I love exploring new tools and learning about
+            UI/UX trends. I'm passionate about sharing knowledge, building
+            real-world projects, and continuously improving my skills through
+            open-source and tutorials.
           </p>
         </motion.div>
       </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Menu, X, Moon, Sun } from 'lucide-react'
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -32,7 +33,8 @@ const Navbar = () => {
       <div className="max-w-[1600px] mx-auto flex justify-between items-center py-4">
         {/* Logo */}
         <a href="#" className="text-xl sm:text-2xl lg:text-3xl font-bold text-cyan-400 tracking-wide">
-          Kasim.dev
+      <img src={logo} alt="Logo" className="h-10 sm:h-10 lg:h-18" />
+
         </a>
 
         {/* Desktop Navigation */}
