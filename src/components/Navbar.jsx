@@ -41,7 +41,7 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-4 sm:space-x-6 lg:space-x-10 text-sm sm:text-base lg:text-lg font-medium">
           <a href="#about" className="text-slate-300 hover:text-cyan-400 transition">About</a>
           <a href="#projects" className="text-slate-300 hover:text-cyan-400 transition">Projects</a>
-          <a href="#testimonials" className="text-slate-300 hover:text-cyan-400 transition">Testimonials</a>
+        
           <a href="#contact" className="text-slate-300 hover:text-cyan-400 transition">Contact</a>
 
           {/* Dark Mode Button */}
@@ -78,7 +78,7 @@ const Navbar = () => {
         <div className="md:hidden bg-[#0e1628] border-t border-slate-700 py-4 space-y-2 px-4 sm:px-6">
           <a href="#about" className="block text-base text-slate-300 hover:text-cyan-400 transition">About</a>
           <a href="#projects" className="block text-base text-slate-300 hover:text-cyan-400 transition">Projects</a>
-          <a href="#testimonials" className="block text-base text-slate-300 hover:text-cyan-400 transition">Testimonials</a>
+          
           <a href="#contact" className="block text-base text-slate-300 hover:text-cyan-400 transition">Contact</a>
         </div>
       )}

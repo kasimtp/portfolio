@@ -25,7 +25,7 @@ const Contact = () => {
             <div>
               <h2 className="text-4xl font-extrabold text-cyan-400 mb-2">Get in Touch</h2>
               <p className="text-gray-300 text-base leading-relaxed max-w-md">
-                I'm always open to new opportunities and collaboration. Feel free to reach out!
+                I&lsquo;m always open to new opportunities and collaboration. Feel free to reach out!
               </p>
             </div>
 

@@ -6,28 +6,28 @@ const Projects = () => {
   {
   title: 'E-Commerce Watch Store',
   desc: 'A modern online watch store featuring stylish product displays, user-friendly cart functionality, login/signup authentication, and payment gateway integration. Designed with performance in mind using React, Tailwind, and Vite.',
-  github: 'https://github.com/rohitsingh93300/portfolio', // ⚠️ Update if incorrect repo
+  github: '',
   tech: ['React', 'Tailwind', 'Vite', 'Stripe'],
 }
 ,
   {
   title: 'E-Commerce Furniture Store',
   desc: 'A full-featured e-commerce platform for premium furniture shopping. Includes user login/signup, secure payment gateway integration, dynamic product listings with images, category filtering, cart management, and product rating system. Built with a decoupled frontend and backend architecture for scalability.',
-  github: 'https://github.com/rohitsingh93300/ecommerce-furniture-frontend', 
+  github: '', 
   tech: ['React', 'Tailwind', 'Node.js', 'MongoDB', 'Stripe'],
 },
 
   {
   title: 'Hospital Management',
   desc: 'A fully functional hospital website with dynamic pages and responsive layout. Features include online doctor booking, secure doctor accounts, and admin functionality to add or manage doctors.',
-  github: 'https://github.com/yourusername/hospital-management',
+  github: '',
   tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
 },
 
   {
   title: 'To-Do List App',
   desc: 'A responsive and interactive to-do list application where users can add, delete, and mark tasks as completed. Supports local storage for data persistence.',
-  github: 'https://github.com/rohitsingh93300/todo-app',
+  github: '',
   tech: ['React', 'Tailwind', 'LocalStorage'],
 },
 
