@@ -53,10 +53,10 @@ const About = () => {
           <h2 className="text-sm text-cyan-400 font-semibold uppercase tracking-widest">
             About Me
           </h2>
-          <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-white">
+          <h1 className="mt-2 text-3xl sm:text-5xl font-bold text-white">
             Hi, I’m Kasim
           </h1>
-          <p className="mt-4 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="mt-4 text-sm sm:text-xl text-gray-300 max-w-2xl mx-auto">
             A Full-Stack Developer skilled in MERN Stack, Firebase, and REST
             APIs — passionate about clean code, real-world projects, and
             responsive, user-friendly design.
@@ -77,7 +77,7 @@ const About = () => {
             <h3 className="text-2xl font-semibold text-cyan-400 mb-4">
               My Journey
             </h3>
-            <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
+            <p className="text-gray-300 leading-relaxed text-sm sm:text-lg">
               I began my development journey with a strong curiosity to
               understand how web applications work behind the scenes. Over time,
               I built a solid foundation in the MERN stack, focusing on
@@ -140,7 +140,7 @@ const About = () => {
           <h3 className="text-2xl font-semibold text-cyan-400 mb-4">
             More About Me
           </h3>
-          <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
+          <p className="text-gray-300 leading-relaxed text-sm sm:text-lg">
             Outside of coding, I love exploring new tools and learning about
             UI/UX trends. I'm passionate about sharing knowledge, building
             real-world projects, and continuously improving my skills through

@@ -1,7 +1,4 @@
 import React from 'react';
-import reactLogo from "../assets/React.png";
-import reduxLogo from "../assets/Redux.png";
-import tailwind from "../assets/Tailwind Css.png";
 import githubqr from "../assets/githubqr.png";
 
 const Hero = () => {
