@@ -12,7 +12,7 @@ const Projects = () => {
 }
 ,
   {
-  title: 'E-Commerce Furniture Store',
+  title: 'Watch Store',
   desc: 'A full-featured e-commerce platform for premium furniture shopping. Includes user login/signup, secure payment gateway integration, dynamic product listings with images, category filtering, cart management, and product rating system. Built with a decoupled frontend and backend architecture for scalability.',
   github: '', 
   tech: ['React', 'Tailwind', 'Node.js', 'MongoDB', 'Stripe'],

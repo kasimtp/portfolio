@@ -28,7 +28,7 @@ const Hero = () => {
             </p>
 
             <a
-              href="https://drive.google.com/file/d/1_eHK8PQ0rWRtJXlzG2-HZA6n1ysgaW-w/view?usp=sharing"
+              href="https://drive.google.com/file/d/1w3vNUUtrf62WYobKhZKHPJW5xBOsu5LG/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-cyan-500 text-white px-6 py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-white hover:text-cyan-600 transition duration-300"
