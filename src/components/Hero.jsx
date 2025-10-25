@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import githubqr from "../assets/githubqr.png";
+import kasim from "../assets/kasim.png"
 
 const Hero = () => {
   return (
@@ -50,56 +50,33 @@ const Hero = () => {
               websites that solve real-world problems.
             </motion.p>
 
-            {/* ✅ Download CV Button (Fully Working) */}
-          
-<motion.div
-  whileHover={{ scale: 1.05 }}
-  transition={{ duration: 0.2 }}
-  className="inline-block relative z-50 pointer-events-auto"
->
-  <a
-    href="https://drive.google.com/uc?export=view&id=1OPXUDSqwj0435MPUUVIiPBkKHcVmpKs7"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block bg-cyan-500 text-white px-6 py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-cyan-400 hover:text-whit transition duration-300 cursor-pointer"
-  >
-    Download CV
-  </a>
-</motion.div>
-
-
+            {/* ✅ Download CV Button */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              className="inline-block relative z-50 pointer-events-auto"
+            >
+              <a
+                href="https://drive.google.com/uc?export=view&id=1OPXUDSqwj0435MPUUVIiPBkKHcVmpKs7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-cyan-500 text-white px-6 py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-cyan-400 hover:text-white transition duration-300 cursor-pointer"
+              >
+                Download CV
+              </a>
+            </motion.div>
           </motion.div>
 
           {/* Right Side */}
-          <motion.div
-            className="w-full lg:w-1/2 relative flex justify-center items-center"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-          >
-            {/* ✅ QR Code with Cursor Pointer */}
-            <motion.img
-              src={githubqr}
-              alt="QR Code"
-              className="h-64 sm:h-72 md:h-80 lg:h-[45vh] cursor-pointer rounded-2xl shadow-[0_0_60px_10px_rgba(6,182,212,0.4)]"
-              whileHover={{
-                scale: 1.05,
-                rotate: [0, 1, -1, 0],
-                transition: { duration: 0.5 },
-              }}
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 3,
-                ease: "easeInOut",
-              }}
-              onClick={() =>
-                window.open("https://github.com/kasimtp", "_blank")
-              }
+          <div className="w-full lg:w-1/2 flex  justify-center items-center">
+            {/* Static Profile Photo */}
+            <img
+              src={kasim}
+              alt="Kasim"
+              className="h-64 sm:h-72 md:h-80  bg-transparent lg:h-[45vh] rounded-2xl  cursor-pointer"
+              onClick={() => window.open("https://github.com/kasimtp", "_blank")}
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
