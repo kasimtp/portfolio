@@ -1,113 +1,150 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
+import { PiEye } from "react-icons/pi";
 
 const Projects = () => {
   const projectJson = [
     {
-      title: 'E-Commerce Watch Store',
-      desc: 'A modern online watch store featuring stylish product displays, cart, login/signup authentication, and payment gateway integration using React, Tailwind, and Vite.',
-      github: '#',
-      tech: ['React', 'Tailwind', 'Vite', 'Stripe'],
+      title: "E-Commerce Store",
+      desc: "Modern online furniture store with dynamic products, authentication, cart, and Razorpay payment integration using React, Tailwind, Vite.",
+      github: "https://github.com/kasimtp/E-commerce-furniture",
+      live: "https://e-commerce-furniture-hhmq.vercel.app/",
+      tech: ["React", "Tailwind", "Vite", "Razorpay"],
     },
     {
-      title: 'Watch Store',
-      desc: 'A full-featured e-commerce platform for premium furniture shopping with dynamic product listings, category filtering, cart management, and secure payment.',
-      github: '#',
-      tech: ['React', 'Tailwind', 'Node.js', 'MongoDB', 'Stripe'],
+      title: "Hospital Management",
+      desc: "Responsive hospital website with doctor booking, secure authentication, and admin control panel.",
+      github: "https://github.com/kasimtp/doctors-frontend",
+      live: "https://doctors-two-nu.vercel.app/",
+      tech: ["React", "Node.js", "MongoDB", "Tailwind"],
     },
     {
-      title: 'Hospital Management',
-      desc: 'Responsive hospital website with online doctor booking, secure doctor accounts, and admin functionality.',
-      github: '#',
-      tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
+      title: "To-Do List App",
+      desc: "Interactive to-do list app with local storage, responsive UI, and smooth animations for productivity.",
+      github: "https://github.com/kasimtp/Todolist.git",
+      live: "https://kasimtp.github.io/Todolist/",
+      tech: ["React", "Tailwind", "LocalStorage"],
     },
     {
-      title: 'To-Do List App',
-      desc: 'Interactive to-do list application with local storage support for persistence.',
-      github: '#',
-      tech: ['React', 'Tailwind', 'LocalStorage'],
+      title: "Weather App",
+      desc: "Real-time weather forecast app using OpenWeather API, clean UI, responsive design.",
+      github: "https://github.com/kasimtp/weather-app",
+      live: "https://kasimtp.github.io/weather-app/",
+      tech: ["JavaScript", "CSS", "HTML"],
     },
     {
-      title: 'Webelite Builder',
-      desc: 'Responsive business website for a web development agency using Next.js and Tailwind.',
-      github: '#',
-      tech: ['Next.js', 'Tailwind', 'SEO'],
+      title: "Portfolio Website",
+      desc: "Personal portfolio showcasing projects, skills, built with Next.js, Tailwind, and Framer Motion animations.",
+      github: "https://github.com/kasimtp/portfolio",
+      live: "https://portfoliokasim.vercel.app/",
+      tech: ["Next.js", "Tailwind", "Framer Motion"],
     },
   ];
 
   return (
     <section
       id="projects"
-      className="bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-white py-20 px-4 font-sans"
+      className="bg-gradient-to-b from-[#0f172a] via-[#16213e] to-[#1e293b] text-white py-24 px-4 font-sans"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl font-bold text-cyan-400 mb-2">Projects</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Some recent work showcasing my full-stack development skills.
+          <h2 className="text-5xl sm:text-6xl font-bold text-cyan-400 mb-3">
+            My Projects
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
+            Showcasing modern web applications and interactive UI projects with cutting-edge technologies.
           </p>
         </motion.div>
 
-        <div className="relative flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory">
+        {/* Projects Grid */}
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {projectJson.map((item, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0 w-[300px] sm:w-[350px] lg:w-[400px] snap-start bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-lg relative group transition-all duration-300"
+              initial={{
+                opacity: 0,
+                x: index % 2 === 0 ? -150 : 150,
+                rotate: index % 2 === 0 ? -5 : 5,
+                scale: 0.9,
+              }}
+              whileInView={{ opacity: 1, x: 0, rotate: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
+              whileHover={{
+                scale: 1.05,
+                rotate: index % 2 === 0 ? 2 : -2,
+                y: -10,
+                boxShadow: "0 25px 50px rgba(6,182,212,0.3)",
+              }}
+              className="bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-6 flex flex-col justify-between cursor-pointer transition-all duration-500 relative"
             >
-              {/* Overlay Animation */}
+              {/* Floating subtle animation */}
               <motion.div
-                className="absolute inset-0 bg-cyan-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 0.2 }}
-              ></motion.div>
-
-              <h3 className="text-xl font-semibold text-cyan-300 mb-2 z-10 relative">
-                {item.title}
-              </h3>
-              <p className="text-gray-300 text-sm mb-4 z-10 relative">
-                {item.desc}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4 z-10 relative">
-                {item.tech.map((tech, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.05 }}
-                    className="bg-cyan-700/40 text-xs sm:text-sm text-white px-3 py-1 rounded-full hover:bg-cyan-500/60 transition"
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
-              </div>
-
-              <a
-                href={item.github !== '#' ? item.github : undefined}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-md transition ${
-                  item.github !== '#'
-                    ? 'bg-cyan-500 hover:bg-cyan-600 text-white z-10 relative'
-                    : 'bg-gray-700 text-gray-400 cursor-not-allowed z-10 relative'
-                }`}
+                animate={{ y: [0, -5, 0] }}
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                className="flex flex-col h-full"
               >
-                <FaGithub /> GitHub
-              </a>
+                {/* Title */}
+                <h3 className="text-2xl sm:text-3xl font-bold text-cyan-300 mb-3">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-300 text-sm sm:text-base mb-5">
+                  {item.desc}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {item.tech.map((tech, i) => (
+                    <motion.span
+                      key={i}
+                      className="bg-cyan-700/30 text-xs sm:text-sm text-white px-3 py-1 rounded-full border border-cyan-500/30"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.05, duration: 0.4 }}
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+                </div>
+
+                {/* Buttons */}
+                <div className="flex justify-between items-center mt-auto gap-2">
+                  <motion.a
+                    href={item.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    className="flex items-center gap-2 text-sm sm:text-base font-medium px-4 py-2 rounded-md bg-cyan-500 hover:bg-cyan-600 text-white transition"
+                  >
+                    <FaGithub className="text-lg sm:text-xl" /> GitHub
+                  </motion.a>
+
+                  {item.live && (
+                    <motion.a
+                      href={item.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1 }}
+                      className="flex items-center gap-2 text-sm sm:text-base font-medium px-4 py-2 rounded-md bg-transparent border border-cyan-400 hover:bg-cyan-500 hover:text-white text-cyan-400 transition"
+                    >
+                      <PiEye className="text-lg sm:text-xl" /> Live
+                    </motion.a>
+                  )}
+                </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
-
-        <p className="mt-4 text-gray-500 text-sm text-center">
-          Scroll horizontally to view more projects
-        </p>
       </div>
     </section>
   );

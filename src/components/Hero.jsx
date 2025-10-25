@@ -36,7 +36,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.7 }}
             >
-              Mern Stack Developer & Designer
+              MERN Stack Developer & Designer
             </motion.p>
 
             <motion.p
@@ -49,15 +49,23 @@ const Hero = () => {
               and modern web technologies. I love building beautiful, performant
               websites that solve real-world problems.
             </motion.p>
-{/* Test fallback */}
-<a
-  href="https://drive.google.com/file/d/1w3vNUUtrf62WYobKhZKHPJW5xBOsu5LG/view?usp=sharing"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block bg-cyan-500 text-white px-6 py-3 rounded-lg cursor-pointer"
+
+            {/* ✅ Download CV Button (Fully Working) */}
+          
+<motion.div
+  whileHover={{ scale: 1.05 }}
+  transition={{ duration: 0.2 }}
+  className="inline-block relative z-50 pointer-events-auto"
 >
-  Download CV (normal a)
-</a>
+  <a
+    href="https://drive.google.com/uc?export=view&id=1OPXUDSqwj0435MPUUVIiPBkKHcVmpKs7"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block bg-cyan-500 text-white px-6 py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-cyan-400 hover:text-whit transition duration-300 cursor-pointer"
+  >
+    Download CV
+  </a>
+</motion.div>
 
 
           </motion.div>
@@ -69,10 +77,11 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
           >
+            {/* ✅ QR Code with Cursor Pointer */}
             <motion.img
               src={githubqr}
               alt="QR Code"
-              className="h-64 sm:h-72 md:h-80 lg:h-[45vh] rounded-2xl shadow-[0_0_60px_10px_rgba(6,182,212,0.4)]"
+              className="h-64 sm:h-72 md:h-80 lg:h-[45vh] cursor-pointer rounded-2xl shadow-[0_0_60px_10px_rgba(6,182,212,0.4)]"
               whileHover={{
                 scale: 1.05,
                 rotate: [0, 1, -1, 0],
@@ -86,6 +95,9 @@ const Hero = () => {
                 duration: 3,
                 ease: "easeInOut",
               }}
+              onClick={() =>
+                window.open("https://github.com/kasimtp", "_blank")
+              }
             />
           </motion.div>
         </div>
