@@ -49,18 +49,17 @@ const Hero = () => {
               and modern web technologies. I love building beautiful, performant
               websites that solve real-world problems.
             </motion.p>
+{/* Test fallback */}
+<a
+  href="https://drive.google.com/file/d/1w3vNUUtrf62WYobKhZKHPJW5xBOsu5LG/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block bg-cyan-500 text-white px-6 py-3 rounded-lg cursor-pointer"
+>
+  Download CV (normal a)
+</a>
 
-            <motion.a
-              href="https://drive.google.com/file/d/1w3vNUUtrf62WYobKhZKHPJW5xBOsu5LG/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-cyan-500 text-white px-6 py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-white hover:text-cyan-600 transition duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <p className="cursor-pointer">Download CV</p>
-            </motion.a>
+
           </motion.div>
 
           {/* Right Side */}
