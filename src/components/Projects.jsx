@@ -12,13 +12,7 @@ const Projects = () => {
       live: "https://e-commerce-furniture-hhmq.vercel.app/",
       tech: ["React", "Tailwind", "Vite", "Razorpay"],
     },
-    {
-      title: "Hospital Management",
-      desc: "Responsive hospital website with doctor booking, secure authentication, and admin control panel.",
-      github: "https://github.com/kasimtp/doctors-frontend",
-      live: "https://doctors-two-nu.vercel.app/",
-      tech: ["React", "Node.js", "MongoDB", "Tailwind"],
-    },
+
     {
       title: "To-Do List App",
       desc: "Interactive to-do list app with local storage, responsive UI, and smooth animations for productivity.",
