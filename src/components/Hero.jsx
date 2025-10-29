@@ -57,7 +57,7 @@ const Hero = () => {
               className="inline-block relative z-50 pointer-events-auto"
             >
               <a
-                href="https://drive.google.com/uc?export=view&id=1OPXUDSqwj0435MPUUVIiPBkKHcVmpKs7"
+                href="https://drive.google.com/file/d/1mDZ7HpzlTO4DWSrhIOcztu6kFkM-FiPF/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block bg-cyan-500 text-white px-6 py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-cyan-400 hover:text-white transition duration-300 cursor-pointer"
