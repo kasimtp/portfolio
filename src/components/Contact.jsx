@@ -62,7 +62,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <SocialIcon url="https://www.linkedin.com/in/muhammed-kasim-tp" bgColor="transparent" fgColor="#00CFFF" />
+                <SocialIcon url="https://www.linkedin.com/in/muhammed-kasim-tp" bgColor="transparent"  />
               </motion.a>
 
               <motion.a
@@ -72,7 +72,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <SocialIcon url="https://www.instagram.com/kasim_mhd__?igsh=bm4zMDNmd3kwbzBu" bgColor="transparent" />
+                <SocialIcon url="https://www.instagram.com/kasim_mhd__?igsh=bm4zMDNmd3kwbzBu" bgColor="transparent"  />
               </motion.a>
 
               <motion.a
