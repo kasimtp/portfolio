@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import kasim from "../assets/kasim.png"
+import photonew from "../assets/photonew.png"
 
 const Hero = () => {
   return (
@@ -71,7 +71,7 @@ const Hero = () => {
           <div className="w-full lg:w-1/2 flex  justify-center items-center">
             {/* Static Profile Photo */}
             <img
-              src={kasim}
+              src={photonew}
               alt="Kasim"
               className="h-64 sm:h-72 md:h-80  bg-transparent lg:h-[45vh] rounded-2xl  cursor-pointer"
               onClick={() => window.open("https://github.com/kasimtp", "_blank")}
