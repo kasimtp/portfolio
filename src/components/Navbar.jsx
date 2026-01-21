@@ -30,7 +30,8 @@ const Navbar = () => {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#0e1628]/95 text-white backdrop-blur-lg px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
+    <header className="sticky top-0 z-50 w-full bg-transparent text-white  px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
+      
       <div className="max-w-[1600px] mx-auto flex justify-between items-center py-4">
         {/* Logo */}
         <a href="#" className="text-xl sm:text-2xl lg:text-3xl font-bold text-cyan-400 tracking-wide">
@@ -40,10 +41,10 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-4 sm:space-x-6 lg:space-x-10 text-sm sm:text-base lg:text-lg font-medium">
-          <a href="#about" className="text-slate-300 hover:text-cyan-400 transition">About</a>
-          <a href="#projects" className="text-slate-300 hover:text-cyan-400 transition">Projects</a>
+          <a href="#about" className="text-black hover:text-cyan-400 transition">About</a>
+          <a href="#projects" className="text-black hover:text-cyan-400 transition">Projects</a>
         
-          <a href="#contact" className="text-slate-300 hover:text-cyan-400 transition">Contact</a>
+          <a href="#contact" className="text-black hover:text-cyan-400 transition">Contact</a>
 
           {/* Dark Mode Button */}
           <button
