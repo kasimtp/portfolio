@@ -1,30 +1,14 @@
+
+
+
+
+
+
+
+
 import React from "react";
 import { motion } from "framer-motion";
-import Html from "../assets/Html.png";
-import Css from "../assets/CSS.png";
-import Javascript from "../assets/JS.png";
-import ReactLogo from "../assets/React.png";
-import ReduxLogo from "../assets/Redux.png";
-import Tailwind from "../assets/Tailwind Css.png";
-import Bootstrap from "../assets/Bootstrap.png";
-import NodeLogo from "../assets/NodeLogo.png";
-import Mongodb from "../assets/mongodb.svg";
-import Express from "../assets/Express.png";
-import NextJs from "../assets/NextJs.png";
-
-const skills = [
-  { img: Html, label: "HTML", level: 95 },
-  { img: Css, label: "CSS", level: 90 },
-  { img: Javascript, label: "JavaScript", level: 88 },
-  { img: ReactLogo, label: "React", level: 92 },
-  { img: ReduxLogo, label: "Redux", level: 80 },
-  { img: Tailwind, label: "Tailwind CSS", level: 93 },
-  { img: Bootstrap, label: "Bootstrap", level: 85 },
-  { img: NodeLogo, label: "Node.js", level: 87 },
-  { img: Express, label: "Express.js", level: 84 },
-  { img: Mongodb, label: "MongoDB", level: 86 },
-  { img: NextJs, label: "Next.js", level: 83 },
-];
+import { Code2, Server, Globe } from "lucide-react"; // Using Lucide for the icons in the image
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -35,125 +19,97 @@ const About = () => {
   return (
     <section
       id="about"
-      className="text-white font-sans py-20 px-4 sm:px-6 lg:px-8"
-      style={{
-        background: "linear-gradient(135deg, #0e1628, #101a30, #0e1628)",
-      }}
+      className="text-white font-sans py-20 px-4 sm:px-6 lg:px-8 bg-slate-50" // Light background as per image
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          variants={fadeInUp}
-        >
-          <h2 className="text-sm text-cyan-400 font-semibold uppercase tracking-widest">
-            About Me
-          </h2>
-          <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-white">
-            Hi, I’m Kasim
-          </h1>
-          <p className="mt-4 text-sm sm:text-xl text-gray-300 max-w-2xl mx-auto">
-            A Full-Stack Developer specializing in the MERN Stack, REST APIs,
-            and responsive design — focused on clean, performant code and modern UI.
-          </p>
-        </motion.div>
+      <div className="max-w-6xl mx-auto">
+        <motion.h1 
+          className="text-center text-5xl font-bold text-blue-600 mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >  
+        <p className="bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
+                   About Me
+                </p>
+        
+        </motion.h1>
 
-        {/* Main Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Journey Section */}
-          <motion.div
-            className="bg-[#1f2a3a]/70 backdrop-blur-md p-8 rounded-2xl border border-gray-700 shadow-lg hover:shadow-cyan-500/20 transition"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            variants={fadeInUp}
-          >
-            <h3 className="text-2xl font-semibold text-cyan-400 mb-4">
-              My Journey
-            </h3>
-            <p className="text-gray-300 leading-relaxed text-sm sm:text-lg">
-              I started as a curious learner exploring how websites and
-              backends work. Today, I design and build full-stack applications
-              with React, Node.js, and MongoDB. I’ve built real-world projects
-              such as e-commerce apps, dashboards, and booking systems, focusing
-              on scalable architecture and intuitive design.
-            </p>
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          
+          {/* Left Column: Text Content */}
+          <div className="space-y-6">
+            <motion.div 
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+            >
+              <p className="text-gray-600 text-lg leading-relaxed">
+                I am a self-taught <span className="text-blue-600 font-semibold">MERN Stack Developer</span> with hands-on experience in building and deploying full-stack web applications.
+              </p>
+            </motion.div>
 
-          {/* Skills Section */}
-          <motion.div
-            className="bg-[#1f2a3a]/70 backdrop-blur-md p-8 rounded-2xl border border-gray-700 shadow-lg hover:shadow-cyan-500/20 transition"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            variants={fadeInUp}
-          >
-            <h3 className="text-2xl font-semibold text-cyan-400 text-center mb-8">
-              Skills & Tools
-            </h3>
-            <div className="space-y-6">
-              {skills.map(({ img, label, level }, i) => (
-                <motion.div
-                  key={i}
-                  className="flex flex-col gap-2"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={img}
-                        alt={label}
-                        className="w-8 h-8 rounded-full border border-cyan-500 bg-[#24314a] p-1"
-                      />
-                      <span className="font-medium text-gray-200 text-sm sm:text-base">
-                        {label}
-                      </span>
-                    </div>
-                    <span className="text-cyan-400 text-sm font-semibold">
-                      {level}%
-                    </span>
-                  </div>
+            <motion.div 
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ delay: 0.2 }}
+              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+            >
+              <p className="text-gray-600 text-lg leading-relaxed">
+                My background in <span className="text-purple-600 font-semibold">Digital Marketing</span> gives me a unique perspective on building user-focused and business-driven applications.
+              </p>
+            </motion.div>
+          </div>
 
-                  <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                    <motion.div
-                      className="h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${level}%` }}
-                      transition={{ duration: 1.2, delay: i * 0.1 }}
-                    ></motion.div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          {/* Right Column: Skill Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            {/* Frontend Card */}
+            <motion.div 
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              className="bg-white p-6 rounded-2xl shadow-md border border-gray-50 flex flex-col gap-4"
+            >
+              <Code2 className="text-blue-500 w-10 h-10" />
+              <div>
+                <h3 className="text-xl font-bold text-gray-800">Frontend</h3>
+                <p className="text-gray-500 text-sm">React, Tailwind, Modern JS</p>
+              </div>
+            </motion.div>
+
+            {/* Backend Card - Slightly offset like the image */}
+            <motion.div 
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ delay: 0.3 }}
+              className="bg-white p-6 rounded-2xl shadow-md border border-gray-50 flex flex-col gap-4 mt-0 sm:mt-12"
+            >
+              <Server className="text-purple-500 w-10 h-10" />
+              <div>
+                <h3 className="text-xl font-bold text-gray-800">Backend</h3>
+                <p className="text-gray-500 text-sm">Node.js, Express, MongoDB</p>
+              </div>
+            </motion.div>
+
+            {/* API & Cloud Card */}
+            <motion.div 
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ delay: 0.4 }}
+              className="bg-white p-6 rounded-2xl shadow-md border border-gray-50 flex flex-col gap-4"
+            >
+              <Globe className="text-pink-500 w-10 h-10" />
+              <div>
+                <h3 className="text-xl font-bold text-gray-800">API & Cloud</h3>
+                <p className="text-gray-500 text-sm">REST API, JWT, Deployment</p>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
-
-        {/* More About Me */}
-        <motion.div
-          className="mt-16 bg-[#1f2a3a]/70 backdrop-blur-md p-8 rounded-2xl border border-gray-700 shadow-lg hover:shadow-cyan-500/20 transition"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          variants={fadeInUp}
-        >
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-4">
-            More About Me
-          </h3>
-          <p className="text-gray-300 leading-relaxed text-sm sm:text-lg">
-            Beyond coding, I enjoy experimenting with UI/UX design, improving
-            workflows, and staying updated with the latest web technologies. My
-            goal is to deliver seamless, visually engaging digital experiences.
-          </p>
-        </motion.div>
       </div>
     </section>
   );

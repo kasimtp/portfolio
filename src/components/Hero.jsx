@@ -448,14 +448,18 @@ const Hero = () => {
       {/* NAVBAR */}
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300
-        ${
-          scrolled
+        ${scrolled
             ? "bg-white/70 backdrop-blur-xl shadow-sm"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex justify-between items-center">
-          <p>Mohd Kasim.TP </p> />
+          <p className="font-mono font-semibold text-xl">
+            Mohd Kasim.TP
+          </p>
+
+
+
 
           {/* Desktop */}
           <nav className="hidden md:flex items-center gap-8 text-sm lg:text-base">
