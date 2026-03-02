@@ -540,9 +540,9 @@ const Hero = () => {
                 </button>
 
                 <a
-                  href="https://drive.google.com/file/d/1mDZ7HpzlTO4DWSrhIOcztu6kFkM-FiPF/view"
+                  href="https://drive.google.com/file/d/1ubmnfs9_R8Lgt2lTaAR7bkfR2-_dfk_6/view?usp=sharing"
                   className="flex items-center gap-2 border px-6 py-3 rounded-xl font-semibold text-sm sm:text-base"
-                >
+                >  
                   <Download size={16} /> Resume
                 </a>
               </div>
