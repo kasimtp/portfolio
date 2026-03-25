@@ -2,6 +2,36 @@
 
 @import "tailwindcss";
 
+@theme {
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --font-ui: "Roboto", sans-serif;
+  --font-accent: "Outfit", sans-serif;
+}
+
+:root {
+  font-family: var(--font-body);
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Custom Selection */
+::selection {
+  background: rgba(37, 99, 235, 0.2);
+  color: #2563eb;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+}
+
+/* Smooth gradients */
+.bg-mesh {
+  background-image: radial-gradient(at 0% 0%, hsla(210, 100%, 75%, 0.15) 0, transparent 50%),
+                    radial-gradient(at 100% 0%, hsla(270, 100%, 75%, 0.1) 0, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(210, 100%, 75%, 0.15) 0, transparent 50%),
+                    radial-gradient(at 0% 100%, hsla(270, 100%, 75%, 0.1) 0, transparent 50%);
 }
