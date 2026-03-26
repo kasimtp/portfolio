@@ -1,177 +1,209 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { 
-  Download, 
-  ArrowRight, 
-  Github, 
-  Linkedin, 
-  Twitter, 
-  Sparkles,
-  MousePointer2,
-  Code
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Instagram,
+  Download,
+  Briefcase,
+  Code2,
+  Layers,
+  Globe,
+  MapPin,
+  Mail,
 } from "lucide-react";
-import photonew from "../assets/photonew.png";
 
 const Hero = () => {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const fadeOut = useTransform(scrollY, [0, 350], [1, 0]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#fafafa] dark:bg-[#020617] pt-32 pb-20 px-6 transition-colors duration-500">
-      
-      {/* Abstract Background Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-[10%] left-[10%] w-[40%] h-[40%] rounded-full bg-blue-100/50 dark:bg-blue-600/5 blur-[120px]" />
-        <div className="absolute bottom-[10%] right-[10%] w-[35%] h-[35%] rounded-full bg-purple-100/50 dark:bg-purple-600/5 blur-[120px]" />
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden bg-green-50/40 dark:bg-gray-950 transition-colors duration-500"
+    >
+      {/* ─── Background ─── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[10%] left-[10%] w-[40%] h-[40%] rounded-full bg-green-200/30 dark:bg-green-900/10 blur-[130px]" />
+        <div className="absolute bottom-[10%] right-[10%] w-[35%] h-[35%] rounded-full bg-emerald-200/25 dark:bg-emerald-900/8 blur-[120px]" />
+        <div
+          className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(34,197,94,0.4) 1px, transparent 1px)",
+            backgroundSize: "36px 36px",
+          }}
+        />
       </div>
 
-      <div className="max-w-6xl mx-auto w-full relative z-10 flex flex-col items-center">
-        
-        {/* SMALL PHOTO AREA */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mb-12"
-        >
-          {/* Circular Frame with Animated Ring */}
-          <div className="relative p-1.5 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 group">
-             <div className="absolute inset-0 rounded-full animate-pulse-slow bg-blue-500/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-             <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white dark:border-slate-900 bg-white dark:bg-slate-800 shadow-2xl">
-               <img 
-                 src={photonew} 
-                 alt="Mohd Kasim" 
-                 className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-700"
-               />
-             </div>
-             
-             {/* Floating Badge (Online Status) */}
-             <div className="absolute -bottom-1 -right-1 bg-white dark:bg-slate-900 p-1 rounded-full shadow-lg border border-slate-100 dark:border-slate-800">
-               <div className="w-4 h-4 rounded-full bg-green-500 border-2 border-white dark:border-slate-900 animate-pulse" />
-             </div>
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8 }}
-            className="absolute -left-12 top-1/2 -translate-y-1/2 hidden md:block"
-          >
-             <div className="px-4 py-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none flex items-center gap-2">
-               <Sparkles size={14} className="text-yellow-500" />
-               <span className="text-[10px] font-black uppercase tracking-widest text-slate-800 dark:text-slate-200">Creative</span>
-             </div>
-          </motion.div>
+      {/* ─── Content ─── */}
+      <div className="max-w-5xl mx-auto w-full px-6 lg:px-12 relative z-10 pt-32 pb-24">
+        <div className="flex flex-col items-center text-center">
 
+          {/* Status pill */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1 }}
-            className="absolute -right-12 top-1/2 -translate-y-1/2 hidden md:block"
-          >
-             <div className="px-4 py-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none flex items-center gap-2">
-               <MousePointer2 size={14} className="text-blue-500" />
-               <span className="text-[10px] font-black uppercase tracking-widest text-slate-800 dark:text-slate-200">Developer</span>
-             </div>
-          </motion.div>
-        </motion.div>
-
-        {/* IDENTITY AREA */}
-        <div className="text-center space-y-8">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400"
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/60 dark:bg-white/[0.05] backdrop-blur-xl border border-green-200/30 dark:border-green-700/20 mb-8"
           >
-            <div className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
-            <span className="text-xs font-black uppercase tracking-[0.3em]">Full Stack Developer</span>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+            </span>
+            <span
+              className="text-[10px] font-bold tracking-[0.2em] text-green-600 dark:text-green-400 uppercase"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              Available for work
+            </span>
           </motion.div>
 
-          <motion.h1 
+          {/* Name + Title */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-heading text-5xl md:text-8xl font-black text-slate-900 dark:text-white leading-[1.05] tracking-tight"
+            transition={{ delay: 0.2, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            Imagine <span className="bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent italic">Design</span> <br />
-            Create <span className="text-blue-600">Reality.</span>
-          </motion.h1>
+            <h1
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-[1.15] tracking-tight"
+              style={{ fontFamily: "'Syne', sans-serif" }}
+            >
+              Mohd Kasim
+            </h1>
+            <div className="flex items-center justify-center gap-3 mt-3">
+              <div className="h-px w-5 bg-green-500/50" />
+              <span
+                className="text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-green-600 dark:text-green-400"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                Full Stack Developer
+              </span>
+              <div className="h-px w-5 bg-green-500/50" />
+            </div>
+          </motion.div>
 
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className="font-body text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed"
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35, duration: 0.6 }}
+            className="text-gray-500 dark:text-gray-400 max-w-lg mx-auto mt-6 text-sm sm:text-base leading-relaxed"
           >
-            Hi, I'm <span className="text-slate-900 dark:text-white font-black">Mohd Kasim</span>. 
-            Designing digital ecosystems that are equal parts functional and breathtaking.
+            I design & build{" "}
+            <span className="text-gray-800 dark:text-gray-200 font-semibold">
+              modern web applications
+            </span>{" "}
+            with clean code, thoughtful interfaces, and a focus on
+            performance that makes a real impact.
           </motion.p>
 
-          {/* CTA Group */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+          {/* Quick info row */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-wrap justify-center items-center gap-6 pt-6"
+            transition={{ delay: 0.45, duration: 0.5 }}
+            className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 mt-5"
+          >
+            {[
+              { icon: MapPin, text: "India" },
+              { icon: Mail, text: "tpkasimvlr@gmail.com" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-1.5 text-gray-400 dark:text-gray-500">
+                <item.icon size={13} className="text-green-500/70" />
+                <span
+                  className="text-[11px] sm:text-xs font-medium"
+                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                  {item.text}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* ─── Stat Cards ─── */}
+    
+
+          {/* ─── CTAs ─── */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="flex flex-wrap justify-center items-center gap-3 mt-9"
           >
             <motion.a
               href="#projects"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative px-10 py-5 rounded-3xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-black text-sm uppercase tracking-widest shadow-2xl hover:shadow-blue-500/20 transition-all flex items-center gap-3"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="group px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold text-sm transition-all flex items-center gap-2 shadow-lg shadow-green-500/15 no-underline"
             >
-              <span>Explore My Work</span>
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <span>View Projects</span>
+              <ArrowRight
+                size={15}
+                className="group-hover:translate-x-0.5 transition-transform"
+              />
             </motion.a>
 
             <motion.a
               href="https://drive.google.com/file/d/1ubmnfs9_R8Lgt2lTaAR7bkfR2-_dfk_6/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 rounded-3xl bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-black text-sm uppercase tracking-widest hover:border-blue-400 dark:hover:border-blue-400 transition-all"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="px-6 py-3 rounded-xl bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-green-200/30 dark:border-green-700/20 text-gray-700 dark:text-gray-200 font-semibold text-sm transition-all hover:border-green-400 dark:hover:border-green-600/40 flex items-center gap-2 no-underline"
             >
-              <span>Download CV</span>
+              <Download size={14} />
+              <span>Resume</span>
             </motion.a>
           </motion.div>
 
-          {/* SOCIALS */}
-          <motion.div 
+          {/* ─── Social Row ─── */}
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="pt-12 flex justify-center items-center gap-10"
+            transition={{ delay: 0.9, duration: 0.7 }}
+            className="flex items-center gap-2.5 mt-8"
           >
             {[
-              { icon: Github, href: "https://github.com/kasimtp", label: "Github" },
-              { icon: Linkedin, href: "#", label: "Linkedin" },
-              { icon: Twitter, href: "#", label: "Twitter" }
+              { icon: Github, href: "https://github.com/kasimtp", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/muhammed-kasim-tp", label: "LinkedIn" },
+              { icon: Instagram, href: "https://www.instagram.com/kasim_mhd__/", label: "Instagram" },
             ].map((social, i) => (
-              <a 
+              <motion.a
                 key={i}
-                href={social.href} 
-                className="group flex flex-col items-center gap-2"
+                href={social.href}
+                target={social.href !== "#" ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                whileHover={{ y: -2 }}
+                className="w-9 h-9 rounded-lg bg-white/40 dark:bg-white/[0.04] border border-green-200/20 dark:border-green-700/15 flex items-center justify-center text-gray-400 dark:text-gray-500 hover:text-green-500 hover:border-green-400/30 transition-all no-underline"
+                title={social.label}
               >
-                <div className="p-3 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-all">
-                  <social.icon size={22} />
-                </div>
-                <span className="text-[8px] font-black uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity text-blue-600 dark:text-blue-400">{social.label}</span>
-              </a>
+                <social.icon size={15} />
+              </motion.a>
             ))}
           </motion.div>
         </div>
       </div>
 
-      {/* DecorativeDNA Bar Bottom */}
-      <motion.div 
-        style={{ opacity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+      {/* ─── Scroll indicator ─── */}
+      <motion.div
+        style={{ opacity: fadeOut }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-         <div className="w-[1px] h-20 bg-gradient-to-t from-blue-600/50 to-transparent" />
-         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-300 dark:text-slate-600">Scroll Down</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="w-5 h-8 rounded-full border-2 border-green-400/25 dark:border-green-700/25 flex justify-center pt-1.5"
+        >
+          <div className="w-1 h-1.5 rounded-full bg-green-500/60" />
+        </motion.div>
+        <span
+          className="text-[9px] font-semibold uppercase tracking-[0.25em] text-gray-400 dark:text-gray-600"
+          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+        >
+          Scroll
+        </span>
       </motion.div>
     </section>
   );

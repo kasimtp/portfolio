@@ -1,220 +1,345 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { 
-  SiReact, 
-  SiNextdotjs, 
-  SiJavascript, 
-  SiTailwindcss, 
-  SiRedux, 
-  SiNodedotjs, 
-  SiExpress, 
-  SiMongodb, 
-  SiFirebase, 
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiRedux,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
   SiTypescript,
   SiPostman,
   SiVite,
   SiVercel,
   SiGithub,
-  SiHtml5,
-  SiCss3
 } from "react-icons/si";
-import { 
-  Rocket, 
-  Zap, 
-  Command, 
-  Terminal, 
-  Cpu, 
+import {
+  Rocket,
+  Zap,
+  Command,
+  Terminal,
+  Cpu,
   Code2,
   Blocks,
-  Sparkles
+  Sparkles,
+  Layers,
+  Wrench,
 } from "lucide-react";
 
-const skillCategories = [
+/* ─── Data ───────────────────────────────────────────────────── */
+const categories = [
   {
-    title: "Frontend Mastery",
+    id: "frontend",
+    title: "Frontend",
     icon: Blocks,
-    color: "#3b82f6", // Blue
-    description: "Architecting immersive user interfaces with modern reactivity and fluid motion.",
     skills: [
-      { name: "React", icon: SiReact, level: 92 },
-      { name: "Next.js", icon: SiNextdotjs, level: 85 },
-      { name: "TypeScript", icon: SiTypescript, level: 80 },
-      { name: "Tailwind CSS", icon: SiTailwindcss, level: 95 },
-      { name: "Framer Motion", icon: Zap, level: 88 },
-      { name: "Redux", icon: SiRedux, level: 82 },
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "Framer Motion", icon: Zap, color: "#E36BEE" },
+      { name: "Redux", icon: SiRedux, color: "#764ABC" },
     ],
   },
   {
-    title: "Backend Core",
+    id: "backend",
+    title: "Backend",
     icon: Terminal,
-    color: "#a855f7", // Purple
-    description: "Engineering secure, scalable server-side systems and resilient database architectures.",
     skills: [
-      { name: "Node.js", icon: SiNodedotjs, level: 87 },
-      { name: "Express.js", icon: SiExpress, level: 90 },
-      { name: "MongoDB", icon: SiMongodb, level: 85 },
-      { name: "Firebase", icon: SiFirebase, level: 80 },
-      { name: "REST APIs", icon: Command, level: 92 },
-      { name: "JWT Auth", icon: Code2, level: 88 },
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+      { name: "Express.js", icon: SiExpress, color: "#000000" },
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "REST APIs", icon: Command, color: "#22c55e" },
+      { name: "JWT Auth", icon: Code2, color: "#F43F5E" },
     ],
   },
   {
-    title: "Eco-System",
-    icon: Rocket,
-    color: "#ec4899", // Pink
-    description: "Leveraging high-performance tools and cloud platforms for seamless deployment.",
+    id: "tools",
+    title: "Tools",
+    icon: Wrench,
     skills: [
-      { name: "Vite / Webpack", icon: SiVite, level: 88 },
-      { name: "Vercel / Netlify", icon: SiVercel, level: 85 },
-      { name: "Git / GitHub", icon: SiGithub, level: 92 },
-      { name: "Postman", icon: SiPostman, level: 90 },
-      { name: "SEO Strategy", icon: Sparkles, level: 82 },
-      { name: "Deployment", icon: Cpu, level: 85 },
+      { name: "Vite", icon: SiVite, color: "#646CFF" },
+      { name: "Vercel", icon: SiVercel, color: "#000000" },
+      { name: "Git / GitHub", icon: SiGithub, color: "#181717" },
+      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+      { name: "SEO", icon: Sparkles, color: "#22c55e" },
+      { name: "Deployment", icon: Cpu, color: "#14b8a6" },
     ],
-  }
+  },
 ];
 
-const Skill = () => {
+/* ─── Skill Card ─────────────────────────────────────────────── */
+const SkillCard = ({ skill, index }) => {
+  const Icon = skill.icon;
+  const isDarkIcon =
+    skill.color === "#000000" || skill.color === "#181717";
+
   return (
-    <section id="skills" className="relative py-24 sm:py-32 bg-white dark:bg-[#020617] transition-colors duration-500 overflow-hidden">
-      {/* Dynamic Background Elements */}
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+      transition={{
+        delay: index * 0.05,
+        duration: 0.4,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      whileHover={{ y: -5 }}
+      className="group cursor-default"
+    >
+      <div className="relative h-full p-5 sm:p-6 rounded-2xl bg-white/60 dark:bg-white/[0.03] backdrop-blur-sm border border-green-100/40 dark:border-white/[0.06] hover:border-green-400/50 dark:hover:border-green-500/20 transition-all duration-400 hover:shadow-lg hover:shadow-green-500/[0.04] overflow-hidden">
+        {/* Corner accent */}
+        <div
+          className="absolute top-0 right-0 w-20 h-20 rounded-bl-[40px] opacity-[0.04] group-hover:opacity-[0.08] transition-opacity duration-500"
+          style={{ backgroundColor: skill.color }}
+        />
+
+        {/* Icon */}
+        <div
+          className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg"
+          style={{
+            backgroundColor: `${skill.color}12`,
+            border: `1px solid ${skill.color}25`,
+            color: isDarkIcon
+              ? undefined
+              : skill.color,
+          }}
+        >
+          <Icon
+            size={20}
+            className={isDarkIcon ? "text-gray-700 dark:text-gray-300" : ""}
+          />
+        </div>
+
+        {/* Name */}
+        <h4
+          className="text-sm font-bold text-gray-900 dark:text-white"
+          style={{ fontFamily: "'Syne', sans-serif" }}
+        >
+          {skill.name}
+        </h4>
+
+        {/* Accent dot */}
+        <div className="flex items-center gap-1.5 mt-2">
+          <div
+            className="w-1.5 h-1.5 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"
+            style={{ backgroundColor: skill.color }}
+          />
+          <div
+            className="h-px w-8 rounded-full opacity-20 group-hover:opacity-40 group-hover:w-12 transition-all duration-300"
+            style={{ backgroundColor: skill.color }}
+          />
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+/* ─── Main Section ───────────────────────────────────────────── */
+const Skill = () => {
+  const [activeTab, setActiveTab] = useState("frontend");
+  const activeCategory = categories.find((c) => c.id === activeTab);
+
+  return (
+    <section
+      id="skills"
+      className="relative py-24 sm:py-32 bg-green-50/40 dark:bg-gray-950 transition-colors duration-500 overflow-hidden"
+    >
+      {/* BG */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-500/5 dark:bg-blue-600/5 blur-[120px]" />
-        <div className="absolute bottom-0 left-[-10%] w-[50%] h-[50%] rounded-full bg-purple-500/5 dark:bg-purple-600/5 blur-[120px]" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light" />
+        <div className="absolute top-[10%] right-[-5%] w-[35%] h-[35%] rounded-full bg-green-200/25 dark:bg-green-900/10 blur-[120px]" />
+        <div className="absolute bottom-[10%] left-[-5%] w-[30%] h-[30%] rounded-full bg-emerald-200/20 dark:bg-emerald-900/8 blur-[120px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        {/* Cinematic Header */}
-        <div className="mb-24 text-center">
+      <div
+        className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(34,197,94,0.4) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+
+      <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
+        {/* ─── Header ─── */}
+        <div className="text-center mb-12 sm:mb-14">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-black uppercase tracking-[0.2em] rounded-full mb-8 border border-blue-100 dark:border-blue-800"
-          >
-            <Cpu size={14} className="animate-spin-slow" />
-            <span>Expertise & Capabilities</span>
-          </motion.div>
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white leading-tight"
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-green-500/8 dark:bg-green-500/10 border border-green-300/30 dark:border-green-700/20 mb-6"
           >
-            Technical <br />
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
-              Powerhouse
+            <Layers size={13} className="text-green-500" />
+            <span
+              className="text-[10px] font-bold tracking-[0.25em] text-green-600 dark:text-green-400 uppercase"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              Tech Stack
+            </span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight"
+            style={{ fontFamily: "'Syne', sans-serif" }}
+          >
+            Skills &{" "}
+            <span className="bg-gradient-to-r from-green-500 via-emerald-400 to-teal-500 bg-clip-text text-transparent">
+              Technologies
             </span>
           </motion.h2>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="font-body text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mt-10 text-xl leading-relaxed"
+            transition={{ delay: 0.15 }}
+            className="text-gray-500 dark:text-gray-400 max-w-md mx-auto mt-4 text-sm leading-relaxed"
           >
-            A high-performance stack curated for scalability, speed, and 
-            crafting visually stunning digital products that solve real-world challenges.
+            The tools and frameworks I use to build fast, scalable,
+            and beautiful digital products.
           </motion.p>
         </div>
 
-        {/* 3D-Feel Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14">
-          {skillCategories.map((category, idx) => (
+        {/* ─── Tab Switcher ─── */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="flex justify-center mb-10"
+        >
+          <div className="inline-flex items-center gap-1 p-1 rounded-xl bg-white/50 dark:bg-white/[0.03] border border-green-200/25 dark:border-green-800/15 backdrop-blur-sm">
+            {categories.map((cat) => {
+              const CatIcon = cat.icon;
+              const isActive = activeTab === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveTab(cat.id)}
+                  className={`relative flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                    isActive
+                      ? "text-white"
+                      : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+                  }`}
+                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="skill-tab-bg"
+                      className="absolute inset-0 bg-green-500 rounded-lg shadow-md shadow-green-500/25"
+                      transition={{
+                        type: "spring",
+                        bounce: 0.2,
+                        duration: 0.5,
+                      }}
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center gap-2">
+                    <CatIcon size={14} />
+                    <span className="hidden sm:inline">{cat.title}</span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* ─── Skill Grid (animated on tab switch) ─── */}
+        <div className="min-h-[280px]">
+          <AnimatePresence mode="wait">
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="group relative"
+              key={activeTab}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4"
             >
-              {/* Card Container */}
-              <div className="relative p-10 rounded-[48px] bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 transition-all duration-500 group-hover:bg-white dark:group-hover:bg-slate-900 group-hover:border-transparent group-hover:scale-[1.02] overflow-hidden group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] dark:group-hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] flex flex-col h-full">
-                
-                {/* Glow Effect */}
-                <div 
-                  className="absolute -top-24 -right-24 w-48 h-48 blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 rounded-full"
-                  style={{ backgroundColor: category.color }}
-                />
-
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center gap-6 mb-8">
-                    <div 
-                      className="p-5 rounded-3xl text-white shadow-xl transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
-                      style={{ backgroundColor: category.color, boxShadow: `0 10px 30px ${category.color}40` }}
-                    >
-                      <category.icon size={28} />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-black text-slate-900 dark:text-white leading-tight uppercase tracking-tighter">{category.title}</h3>
-                      <div className="h-1 w-12 rounded-full mt-1" style={{ backgroundColor: category.color }} />
-                    </div>
-                  </div>
-
-                  <p className="text-slate-500 dark:text-slate-400 font-body text-sm leading-relaxed mb-10">
-                    {category.description}
-                  </p>
-
-                  <div className="space-y-6 mt-auto">
-                    {category.skills.map((skill, sIdx) => (
-                      <div key={sIdx} className="group/skill">
-                        <div className="flex justify-between items-center mb-3">
-                          <div className="flex items-center gap-3">
-                            <div className="p-2 bg-white dark:bg-slate-800 rounded-lg shadow-sm group-hover/skill:bg-blue-600 dark:group-hover/skill:bg-blue-600 group-hover/skill:text-white transition-all">
-                              <skill.icon size={16} />
-                            </div>
-                            <span className="text-xs font-black uppercase tracking-widest text-slate-700 dark:text-slate-300 group-hover/skill:text-slate-900 dark:group-hover/skill:text-white transition-colors">{skill.name}</span>
-                          </div>
-                          <span className="text-[10px] font-black text-slate-400 group-hover/skill:text-blue-600 tabular-nums">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        {/* Progressive Bar */}
-                        <div className="h-1.5 w-full bg-slate-200/50 dark:bg-slate-800/50 rounded-full overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.5, delay: 0.5 + idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                            className="h-full rounded-full bg-gradient-to-r from-transparent to-current opacity-80"
-                            style={{ color: category.color, backgroundColor: 'currentColor' }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              {activeCategory.skills.map((skill, i) => (
+                <SkillCard key={skill.name} skill={skill} index={i} />
+              ))}
             </motion.div>
-          ))}
+          </AnimatePresence>
         </div>
 
-        {/* Abstract Tech DNA Bottom Bar */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+        {/* ─── All Tech Summary (always visible) ─── */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="mt-24 p-8 lg:p-12 rounded-[56px] bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-900 dark:to-black text-white relative overflow-hidden group shadow-3xl"
+          transition={{ delay: 0.3 }}
+          className="mt-12 sm:mt-14 pt-8 border-t border-green-200/20 dark:border-green-800/10"
         >
-          <div className="absolute top-[-50%] right-[-10%] w-[60%] h-[200%] bg-blue-600/10 blur-[100px] rotate-12 transition-transform duration-1000 group-hover:rotate-[15deg] group-hover:scale-110" />
-          
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
-            <div className="flex-1 text-center md:text-left">
-              <h4 className="text-3xl font-black mb-4">Ready to Innovate?</h4>
-              <p className="text-slate-400 font-body text-lg">My skills are constantly evolving with the industry pulse. Let's merge my technical proficiency with your bold ideas.</p>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 flex-1 lg:flex-none">
-              {["Agile", "UI Architecture", "Cloud Optimization", "Performance Engineering"].map((tag, i) => (
-                <span key={i} className="px-5 py-2.5 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 text-xs font-bold uppercase tracking-widest hover:border-blue-500/50 transition-all cursor-default">
-                  {tag}
-                </span>
-              ))}
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+            {categories.flatMap((c) => c.skills).map((skill, i) => {
+              const Icon = skill.icon;
+              return (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.15, y: -2 }}
+                  className="flex items-center gap-1.5 text-gray-300 dark:text-gray-700 hover:text-green-500 dark:hover:text-green-500 transition-colors cursor-default"
+                  title={skill.name}
+                >
+                  <Icon size={14} />
+                  <span
+                    className="text-[10px] font-medium tracking-wide"
+                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  >
+                    {skill.name}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* ─── Bottom Banner ─── */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="mt-14 sm:mt-16"
+        >
+          <div className="relative rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-gray-900" />
+            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-green-500/40 to-transparent" />
+
+            <div className="relative z-10 px-6 sm:px-8 py-7 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-5">
+              <div className="text-center sm:text-left">
+                <h4
+                  className="text-base sm:text-lg font-bold text-white mb-1"
+                  style={{ fontFamily: "'Syne', sans-serif" }}
+                >
+                  Always learning, always shipping.
+                </h4>
+                <p
+                  className="text-gray-500 text-xs"
+                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                  My toolkit evolves with every project.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-1.5">
+                {["Agile", "CI/CD", "Cloud", "UI/UX"].map((tag, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/8 text-[10px] font-semibold uppercase tracking-wider text-gray-400 hover:text-green-400 hover:border-green-500/30 transition-all cursor-default"
+                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

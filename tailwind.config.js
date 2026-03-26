@@ -4,15 +4,9 @@ export default {
     "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
+  darkMode: 'class',
   theme: {
-    extend: {
-      fontFamily: {
-        heading: ['Montserrat', 'sans-serif'],
-        body: ['Poppins', 'sans-serif'],
-        ui: ['Roboto', 'sans-serif'],
-        accent: ['Outfit', 'sans-serif'],
-      },
-    },
-},
+    extend: {},
+  },
   plugins: [],
 }

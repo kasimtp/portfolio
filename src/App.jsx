@@ -9,13 +9,13 @@ import Skill from './components/Skill';
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-[#020617] selection:bg-blue-600/30 selection:text-blue-600 transition-colors duration-500">
+    <div className="min-h-screen bg-green-50/40 dark:bg-gray-950 transition-colors duration-500">
       <Navbar />
       <main>
         <Hero />
         <About />
-        <Skill />
         <Projects />
+        <Skill />
         <Contact />
       </main>
       <Footer />
